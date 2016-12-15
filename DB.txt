@@ -1,35 +1,37 @@
-²¡ÈË Patient
-	²¡ºÅ Pa_id	int
-	ĞÕÃû Pa_name	char(20)
-	ÄêÁä Pa_age	int
-	ĞÔ±ğ Pa_sex	char(4)
-	¿ÆÊÒºÅ De_id	int
-	Ò½ÉúºÅ Do_id	int
-	×´Ì¬ Pa_state	int 	0----Î´ÅÅ¶Ó	1----¹ÒºÅ´¦ÅÅ¶Ó	2----Ò½Éú´¦ÅÅ¶Ó		
-	·ÑÓÃ Pa_cost	float
-¿ÆÊÒ Department
-	¿ÆÊÒºÅ De_id	int
-	¿ÆÊÒÃû De_name	char(50)
-Ò½Éú Docter
-	Ò½ÉúºÅ Do_id	char(20)	primary key
-	ĞÕÃû Do_name	char(20)
-	ĞÔ±ğ Do_sex	char(4)
-	¿ÆÊÒºÅ De_id	int
-	Ö°³Æ Do_prof	char(20)
-	µç»° Do_tel	char(11)
-	ÄêÁä Do_age	int
-Ò©Æ· Medicine
-	Ò©Æ·ºÅ Me_id	int	primery key
-	Ò©Æ·Ãû Me_name	char(50)
-	¼Û¸ñ Me_price	float
-	¿â´æ Me_count	int
-ÕËºÅ Account
-	ÕËºÅ Ac_id	char(20)	primery key
-	ÃÜÂë Ac_pwd	char(20)
-	Ö°Òµ Ac_prof	char(10)	0----Ôº³¤	1----Ò½Éú	2----Ò©Ê¦	3----ÊÕ·Ñ						4----¹ÜÀíÔ±
+ç—…äºº Patient
+	ç—…å· Pa_id	int
+	å§“å Pa_name	char(20)
+	å¹´é¾„ Pa_age	int
+	æ€§åˆ« Pa_sex	char(4)
+	ç§‘å®¤å· De_id	int
+	åŒ»ç”Ÿå· Do_id	int
+	çŠ¶æ€ Pa_state	int 	0----æœªæ’é˜Ÿ	1----æŒ‚å·å¤„æ’é˜Ÿ	2----åŒ»ç”Ÿå¤„æ’é˜Ÿ		
+	è´¹ç”¨ Pa_cost	float
+ç§‘å®¤ Department
+	ç§‘å®¤å· De_id	int
+	ç§‘å®¤å De_name	char(50)
+åŒ»ç”Ÿ Docter
+	åŒ»ç”Ÿå· Do_id	char(20)	primary key
+	å§“å Do_name	char(20)
+	æ€§åˆ« Do_sex	char(4)
+	ç§‘å®¤å· De_id	int
+	èŒç§° Do_prof	char(20)
+	ç”µè¯ Do_tel	char(11)
+	å¹´é¾„ Do_age	int
+è¯å“ Medicine
+	è¯å“å· Me_id	int	primery key
+	è¯å“å Me_name	char(50)
+	ä»·æ ¼ Me_price	float
+	åº“å­˜ Me_count	int
+è´¦å· Account
+	è´¦å· Ac_id	char(20)	primery key
+	å¯†ç  Ac_pwd	char(20)
+	èŒä¸š Ac_prof	char(10)	0----é™¢é•¿	1----åŒ»ç”Ÿ	2----è¯å¸ˆ	3----æ”¶è´¹						4----ç®¡ç†å‘˜
 
 class Patient
 {
 	public Patient(){}
 	 
 }
+
+12121
