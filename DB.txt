@@ -1,4 +1,4 @@
-病人 Patient
+﻿病人 Patient
 	病号 Pa_id	int
 	姓名 Pa_name	char(20)
 	年龄 Pa_age	int
@@ -33,3 +33,4 @@ class Patient
 	public Patient(){}
 	 
 }
+徐元夫21：55分测试
