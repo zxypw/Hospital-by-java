@@ -33,5 +33,3 @@ class Patient
 	public Patient(){}
 	 
 }
-
-12121徐元夫  15号测试
