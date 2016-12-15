@@ -1,0 +1,35 @@
+病人 Patient
+	病号 Pa_id	int
+	姓名 Pa_name	char(20)
+	年龄 Pa_age	int
+	性别 Pa_sex	char(4)
+	科室号 De_id	int
+	医生号 Do_id	int
+	状态 Pa_state	int 	0----未排队	1----挂号处排队	2----医生处排队		
+	费用 Pa_cost	float
+科室 Department
+	科室号 De_id	int
+	科室名 De_name	char(50)
+医生 Docter
+	医生号 Do_id	char(20)	primary key
+	姓名 Do_name	char(20)
+	性别 Do_sex	char(4)
+	科室号 De_id	int
+	职称 Do_prof	char(20)
+	电话 Do_tel	char(11)
+	年龄 Do_age	int
+药品 Medicine
+	药品号 Me_id	int	primery key
+	药品名 Me_name	char(50)
+	价格 Me_price	float
+	库存 Me_count	int
+账号 Account
+	账号 Ac_id	char(20)	primery key
+	密码 Ac_pwd	char(20)
+	职业 Ac_prof	char(10)	0----院长	1----医生	2----药师	3----收费						4----管理员
+
+class Patient
+{
+	public Patient(){}
+	 
+}
