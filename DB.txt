@@ -11,6 +11,7 @@
 科室 Department
 	科室号 De_id	char(20) primary key
 	科室名 De_name	char(50) not null
+	收益 De_earn float not null
 医生 Docter
 	医生号 Do_id	char(20) primary key
 	姓名 Do_name	char(20) not null
@@ -30,3 +31,14 @@
 	职业 Ac_prof	char(10) not null	0----院长	1----医生	
 						2----药师	3----收费										4----管理员
 
+数据库角色
+	院长 director 查询表：Account,Department,Doctor,Medicine,Patient
+	医生 doctor   查询表：Patient,Medicine
+	药剂师 pharmacist 查询表：Patient,Doctor,Medicint
+			  修改表：Medicine
+	病人 patient  查询表：Patient,Department,Doctor
+		      修改表：Patient
+	收费人员 toll 查询表：Patient,Medicine
+		      修改表：Patient
+	系统管理员 administratro 查询表：Medicine,Account,Department
+				 修改表：Medicine,Account,Department
