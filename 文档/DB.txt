@@ -20,6 +20,7 @@
 	科室号 De_id	char(20) not null
 	职称 Do_prof	char(20) not null
 	电话 Do_tel	char(11) not null
+	状态 Do_state	int not null	0----未上班（未登录）	1----在岗（已登录）
 药品 Medicine
 	药品号 Me_id		char(20) primary key
 	药品名 Me_name		char(50) not null
