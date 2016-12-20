@@ -1,4 +1,4 @@
-package client;
+﻿package client;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -15,7 +15,7 @@ public class client {
         try{
         String inputString="test";
         server=new Socket("192.168.1.103",1211);
-        System.out.println("连接服务器(端口1211)成功，请输入信息:");
+        System.out.println("连接服务器(端口1211)成功，当前是"+server_mult.num+"号客户端，请输入信息:");//num需要存储在数据库里，实时显示当前有几个客户端在与主机连接。
         BufferedReader sin =new BufferedReader(new InputStreamReader(System.in));
         PrintWriter os=new PrintWriter(server.getOutputStream());
         BufferedReader is=new BufferedReader(new InputStreamReader(server.getInputStream()));
