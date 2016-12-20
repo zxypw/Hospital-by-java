@@ -18,12 +18,12 @@ public class DB {
 	
 
 	
-	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	//½¨Á¢Êý¾Ý¿âÁ¬½Ó£¬´«Èë²ÎÊýÎªÓÃ»§Ãû£¬ÃÜÂë
 	public boolean connect() throws ClassNotFoundException {
 		
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+		//¼ÓÔØÊý¾Ý¿âÇý¶¯³ÌÐò
 		Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
-		//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ó£ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Îªaccountï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªpwd
+		//½¨Á¢Êý¾Ý¿âÁ¬½Ó£¬µÇÂ¼ÃûÎªaccount£¬ÃÜÂëÎªpwd
 		try {
 			con=DriverManager.getConnection("jdbc:sqlserver://localhost:1433;DatabaseName=Hospital",user_id,user_pwd);
 		} catch (SQLException e) {
@@ -34,9 +34,11 @@ public class DB {
 			return false;
 		else return true;
 	}
+	public ResultSet inquire(String sql){
 		ResultSet result=null;
 		Statement st=null;
 		try {
+			st=this.con.createStatement();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
