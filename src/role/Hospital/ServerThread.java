@@ -5,6 +5,7 @@ import java.util.ArrayList;
 
 public class ServerThread extends Thread {
 	public String name;	//线程名
+	public String id;	//用户id
 	public String command=null;	//接收到来自客户端的命令数据包
 	public boolean conn_state;	//状态
 	public ArrayList<String> client=new ArrayList<String>();	//ArrayList 类用以存放分割后的命令
@@ -27,20 +28,13 @@ public class ServerThread extends Thread {
 	//初始化线程
 	public void init_this() throws ClassNotFoundException{
 		name=client.get(2).toString();
+		id=client.get(3).toString();
 		conn_state=user.connect();
-		
 	}
-	
-	//生成sql语句
-	//public void sql_make() {	}					
+					
 	//进行数据库操作，生成结果集
-	public String getresult(){
-		if(!conn_state)
-			{
-				result="建立连接失败，请检查用户名或密码是否正确";
-				return result;
-			}
-		re=user.inquire(sql_command);
+	public String getresult(String sql){
+		re=user.inquire(sql);
 		result=re.toString();
 		return result;
 	}									

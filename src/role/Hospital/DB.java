@@ -15,9 +15,6 @@ public class DB {
 		this.user_id=account;
 		this.user_pwd=pwd;
 	}
-	
-
-	
 	//建立数据库连接，传入参数为用户名，密码
 	public boolean connect() throws ClassNotFoundException {
 		

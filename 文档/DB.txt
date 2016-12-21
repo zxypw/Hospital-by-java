@@ -6,7 +6,9 @@
 	性别 Pa_sex	char(4) not null
 	科室号 De_id	char(20) not null
 	医生号 Do_id	char(20) not null
-	状态 Pa_state	int not null	0----未排队	1----挂号处排队	2----医生处排队		
+	状态 Pa_state	int not null	0----未排队	1----挂号处排队	2----医生处排队	
+	病情 Pa_illness	char(100)
+	药房 Pa_prescription char(200)
 	费用 Pa_cost	float
 科室 Department
 	科室号 De_id	char(20) primary key

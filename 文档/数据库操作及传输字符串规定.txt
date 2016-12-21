@@ -1,0 +1,9 @@
+ID pwd name state type data
+
+Doctor
+ID pwd name state type patientid illness prescription
+
+
+初始动作	select * from Patient where Do_id=id
+修改病人信息	UPDATE Patient SET Pa_illness=illness,Pa_prescription=prescription 
+		WHERE Pa_id=Patientid

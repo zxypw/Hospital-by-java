@@ -14,6 +14,10 @@ CREATE TABLE Patient(
 	Pa_cost float
 )
 GO
+ALTER TABLE Patient add Pa_prescription char(200)
+ALTER TABLE Patient add Pa_illness char(100)
+GO
+
 CREATE TABLE Department(
 	De_id char(20) primary key,
 	De_name char(50) not null
@@ -29,6 +33,9 @@ CREATE TABLE Doctor(
 	Do_tel char(11) not null
 )
 GO
+ALTER TABLE Doctor add Do_state int not null
+GO
+
 CREATE TABLE Medicine(
 	Me_id char(20) primary key,
 	Me_name char(50) not null,
