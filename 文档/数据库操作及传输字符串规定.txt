@@ -1,12 +1,47 @@
-ID pwd name state type data
-
 Doctor
 ID pwd name state type patientid illness prescription
 
 
-初始动作	select * from Patient where Do_id=id
+初始操作	select * from Patient where Do_id=id
 修改病人信息	UPDATE Patient SET Pa_illness=illness,Pa_prescription=prescription 
 		WHERE Pa_id=Patientid
 
 Patient
-ID pwd name state type 
+ID pwd=0 name age sex state type cost
+初始操作        insert into Patient values('id','name',age,'sex')
+查询操作        select * from Patient where Pa_id=id,De_id=id and Do_id=id
+修改自己状态    update Patient Pa_state=state
+
+
+toll
+ID pwd name state Patient cost price
+初始操作        select * from Patient where Pa_cost=cost
+                select * from Medicine where Me_price
+修改病人状态    update Patient Pa_state=state
+
+
+pharmacist
+ID  pwd name state type prescription
+初始操作        select * from Patient where Pa_id=id and Pa_prescription=prescription
+                select * from Medicine where Me_id=id,Me_name=name,Me_price=price and Me_inventory
+修改病人状态    update Patient Pa_state=state
+修改药品信息    update Medicine Me_inventory
+
+
+director
+ID pwd name type state
+查询操作        select Ac_prof from Account
+                select De_id,De_name,De_earn from Department
+                select Do_id,Do_name,Do_sex,Do_age,De_id,De_prof,Do_tel from Doctor
+                select Me_id,Me_name,Me_price,Me_inventory
+                select Pa_id,Pa_name,Pa_age,Pa_sex,Pa_state
+
+
+administratro
+ID pwd type
+查询操作        select Me_id,Me_name,Me_price,Me_inventory
+                select Ac_id Ac_pwd Ac_prof from Account
+                select De_id,De_name,De_earn from Department
+修改药品信息    update Medicine Me_inventory
+修改账号信息    update Account Ac_id Ac_pwd Ac_prof from Account
+修改科室信息    update Department De_id,De_name,De_earn
