@@ -6,10 +6,13 @@
 	性别 Pa_sex	char(4) not null
 	科室号 De_id	char(20) not null
 	医生号 Do_id	char(20) not null
-	状态 Pa_state	int not null	0----未排队	1----挂号处排队	2----医生处排队	
+	状态 Pa_state	int not null	0----未排队	1----已预约	
+					2----已挂号	3----正在就诊中	
+					4----待取药	5----已取药
 	病情 Pa_illness	char(100)
 	药单 Pa_prescription char(200)
 	费用 Pa_cost	float
+	时间 Pa_time	datatime	存储上一次更改状态的时间
 科室 Department
 	科室号 De_id	char(20) primary key
 	科室名 De_name	char(50) not null

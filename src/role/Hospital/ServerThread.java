@@ -25,13 +25,20 @@ public class ServerThread extends Thread {
 	}
 	//生成DB实体
 	DB user=new DB(client.get(0).toString(),client.get(1).toString());
+	
 	//初始化线程
-	public void init_this() throws ClassNotFoundException{
+	public void init_thread() throws ClassNotFoundException{
 		name=client.get(2).toString();
 		id=client.get(3).toString();
 		conn_state=user.connect();
 	}
-					
+	
+	//处理接收到的命令，创建sql_command
+	public void sql_make(){
+		wordscut();
+		sql_command=client.toString();
+	}
+	
 	//进行数据库操作，生成结果集
 	public String getresult(String sql){
 		re=user.inquire(sql);
