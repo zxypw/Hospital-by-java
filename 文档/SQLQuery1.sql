@@ -16,6 +16,7 @@ CREATE TABLE Patient(
 GO
 ALTER TABLE Patient add Pa_prescription char(200)
 ALTER TABLE Patient add Pa_illness char(100)
+ALTER TABLE Patient add Pa_time datetime not null
 GO
 
 CREATE TABLE Department(

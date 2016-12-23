@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class ServerThread extends Thread {
 	public String name;	//线程名
 	public String id;	//用户id
-	public String command=null;	//接收到来自客户端的命令数据包
+	public static String command=null;	//接收到来自客户端的命令数据包
 	public boolean conn_state;	//状态
 	public ArrayList<String> client=new ArrayList<String>();	//ArrayList 类用以存放分割后的命令
 	public String sql_command;	//为接收到的命令创建sql语句
@@ -19,7 +19,7 @@ public class ServerThread extends Thread {
 		while(count_comm!=0)										//将comm中的字符串存入ArrayList类中
 		{
 			int i=0;
-			this.client.add(comm[i++]);
+			client.add(comm[i++]);
 			count_comm--;
 		}
 	}

@@ -1,10 +1,37 @@
+客户端生成字符串规则为：role id pwd type data 共5个字段构成，中间用空格隔开
+   其中：Role为用户类型，初始值为0，对应角色为：
+		1----病人，2----医生，3----药师，4----收费人员，5----管理员，6----院长
+	id为用户id
+	pwd为用户密码，（病人没有登录密码，pwd置为“0”）
+	type为本次操作的类型，用户对数据库的操作分别有查询，增加，删除，修改，对应为：
+		1----查询，2----增加，3----修改，4----删除
+	data为数据段，记录用户本次输入的数据。data字段分不同用户类型组成不同。
+
+对data字段的规定如下
+1、病人
+	data=Pa_state,ID(身份证号),Pa_name,Pa_age,Pa_sex,De_id(选择科室),Dp_id(选择医生)
+2、医生
+	data=Pa_id(病号),Pa_illness,Pa_prescriprion(药单),
+3、药师
+	type=3(修改药品信息) data=Pa_id,Pa_prescription,operation(操作：1-确认开药，2-拒绝开药，理由为药品不足等)
+	type=2(添加新药) data=Me_id,Me_name,Me_price,Me_inventory
+	type=4(删除药品) data=Me_id
+4、收费人员
+	data=Pa_id,De_id,Pa_prescription,Me_count(药单及开药数量),cost(费用)
+5、管理员
+	type=2(增加除病人外的用户) data=role(操作的角色类型),Ac_id,Ac_pwd
+	type=3(修改除病人外的用户,修改密码) data=Ac_id,Pc_pwd
+6、院长(只有查询功能)
+	type=1 data="Department"||"Doctor"||"Medicine"(data为要查询的项目)
+
+服务器端对数据库的查询操作
+
 Doctor
-ID pwd name state type patientid illness prescription
 
-
-初始操作	select * from Patient where Do_id=id
-修改病人信息	UPDATE Patient SET Pa_illness=illness,Pa_prescription=prescription 
-		WHERE Pa_id=Patientid
+	初始操作	select * from Patient where Do_id=id
+	
+	修改病人信息	UPDATE Patient SET Pa_illness=illness,Pa_prescription=prescription 
+			WHERE Pa_id=Patientid
 
 Patient
 ID pwd=0 name age sex state type cost
@@ -42,6 +69,5 @@ ID pwd type
 查询操作        select Me_id,Me_name,Me_price,Me_inventory
                 select Ac_id Ac_pwd Ac_prof from Account
                 select De_id,De_name,De_earn from Department
-修改药品信息    update Medicine Me_inventory
 修改账号信息    update Account Ac_id Ac_pwd Ac_prof from Account
 修改科室信息    update Department De_id,De_name,De_earn

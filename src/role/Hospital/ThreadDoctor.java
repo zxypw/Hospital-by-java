@@ -48,6 +48,10 @@ public class ThreadDoctor extends ServerThread {
 				+"',Pa_state=2,"	+" WHERE Pa_id='"+patientid+"'";
 	}
 	public static void main(String[] args) {
-		ThreadDoctor doctor;
+		ThreadDoctor doctor=new ThreadDoctor();
+		doctor.command="001 123456 ÎâÞÈ·æ 1 1 10001 ¸ÐÃ° °×¼ÓºÚ";
+		System.out.println(doctor.command);
+		doctor.wordscut();
+		System.out.println(doctor.client);
 	}
 }
