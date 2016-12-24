@@ -1,7 +1,12 @@
 package role.Hospital;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class ThreadPatient extends ServerThread {
 	String sql_init="SELECT * FROM Patient WHERE Pa.id="+id;//查询病人本人信息
+	void ThreatPatient(int No){
+		String Pa_id=date+pa_max;
+	}
 	public void run(){
 		try {
 			init_thread();		//初始化线程
@@ -15,7 +20,7 @@ public class ThreadPatient extends ServerThread {
 			if(this.command!=null)
 			{
 				wordscut();
-				deal();
+				dealcomm();
 				getresult(sql_command);
 			}
 			else if(getresult(sql_init)!=result)	
@@ -31,6 +36,6 @@ public class ThreadPatient extends ServerThread {
 			}	
 		}
 	}
-	public void deal(){	
+	public void dealcomm(){	
 	}
 }
