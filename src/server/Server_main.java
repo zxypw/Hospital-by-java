@@ -7,7 +7,7 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class server_mult {
+public class Server主机端 {
 	public static int num=1;//客户端计数
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
