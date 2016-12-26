@@ -34,7 +34,7 @@
 账号 Account
 	账号 Ac_id	char(20) primery key
 	密码 Ac_pwd	char(20) not null
-	职业 Ac_prof	char(10) not null	0----院长	1----医生	
+	职业 Ac_role	char(10) not null	0----院长	1----医生	
 						2----药师	3----收费										4----管理员
 
 数据库角色

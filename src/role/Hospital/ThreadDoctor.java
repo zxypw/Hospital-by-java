@@ -41,17 +41,21 @@ public class ThreadDoctor extends ServerThread {
 	
 	//处理病人情况
 	public void deal(){
-		String patientid=client.get(4).toString();
-		String prescription=client.get(6).toString();
-		String illness=client.get(5).toString();
+		String patientid=command_array.get(4).toString();	//获取病人id
+		String prescription=command_array.get(6).toString();//获取开药单
+		String illness=command_array.get(5).toString();		//获取诊断信息（什么病）
 		sql_command="UPDATE Patient SET Pa_illness='"+illness+"',Pa_prescription='"+prescription
-				+"',Pa_state=2,"	+" WHERE Pa_id='"+patientid+"'";
+				+"',Pa_state=4,"+" WHERE Pa_id='"+patientid+"'";		//医生就诊，开药，生成修改病人信息的sql命令，将病人状态修改为4待取药
 	}
 	public static void main(String[] args) {
 		ThreadDoctor doctor=new ThreadDoctor();
-		doctor.command="1 001 123456 吴奕锋  3 10001 感冒 白加黑";
+		doctor.command="2 610001 123456 3 001 感冒 白加黑";
 		System.out.println(doctor.command);
 		doctor.wordscut();
-		System.out.println(doctor.client);
+		doctor.deal();
+		for(int i=0;i<doctor.command_array.size();i++)
+		System.out.println(doctor.command_array.get(i));
+		System.out.println(doctor.sql_command);
+		
 	}
 }
