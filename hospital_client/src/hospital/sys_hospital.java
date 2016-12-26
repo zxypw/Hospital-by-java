@@ -15,7 +15,7 @@ import javax.swing.JToggleButton;
 import javax.swing.JTextArea;
 
 public class sys_hospital extends JFrame {
-
+	String De_id,Do_name;
 	private JPanel f1;
 
 	/**
@@ -46,7 +46,9 @@ public class sys_hospital extends JFrame {
 		setContentPane(f1);
 		f1.setLayout(null);
 		
-		JButton btnNewButton = new JButton("\u75C5\u4EBA\r\n\u7CFB\u7EDF");
+		
+		
+        JButton btnNewButton = new JButton("\u75C5\u4EBA\r\n\u7CFB\u7EDF");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				patient newframe = new patient();
@@ -75,6 +77,7 @@ public class sys_hospital extends JFrame {
 		});
 		btnNewButton_2.setBounds(170, 63, 90, 139);
 		f1.add(btnNewButton_2);
+		
 		
 		JButton btnNewButton_3 = new JButton("\u9662\u957F\u67E5\u8BE2");
 		btnNewButton_3.setBounds(249, 63, 90, 139);

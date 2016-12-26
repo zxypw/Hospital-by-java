@@ -7,6 +7,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JSpinner;
@@ -16,6 +17,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
@@ -29,7 +32,10 @@ public class yuyue extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_6;
-
+	String De_id,Do_name;
+	static Object[] keshi;
+	 static Object[] yisheng;
+	 private JTextField textField_5;
 	/**
 	 * Launch the application.
 	 */
@@ -50,6 +56,15 @@ public class yuyue extends JFrame {
 	 * Create the frame.
 	 */
 	public yuyue() {
+		
+		String result1="1-2";//"result1为接受到的药的信息"
+        keshi=result1.split("-"); //将药的信息分好
+        String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1为接受到的药的信息"
+        yisheng=result2.split("-"); //将药的信息分好
+		
+		
+		
+		
 		setTitle("\u586B\u5199\u4E2A\u4EBA\u4FE1\u606F");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -97,16 +112,6 @@ public class yuyue extends JFrame {
 		f3.add(textField_2);
 		textField_2.setColumns(10);
 		
-		JButton btnNewButton = new JButton("\u786E\u5B9A");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				yuyue2 newframe = new yuyue2();
-				newframe.setVisible(true);
-				dispose();
-			}
-		});
-		btnNewButton.setBounds(90, 213, 93, 30);
-		f3.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("\u53CD\u56DE\u9996\u9875");
 		btnNewButton_1.addActionListener(new ActionListener() {
@@ -118,18 +123,6 @@ public class yuyue extends JFrame {
 		});
 		btnNewButton_1.setBounds(249, 213, 93, 30);
 		f3.add(btnNewButton_1);
-		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"    \u79D1\u5BA41", "    \u79D1\u5BA42"}));
-		comboBox.setForeground(Color.BLACK);
-		comboBox.setToolTipText("");
-		comboBox.setBounds(90, 80, 100, 20);
-		f3.add(comboBox);
-		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"\u79D1\u5BA41 \u533B\u751FA", "\u79D1\u5BA41 \u533B\u751FA", "\u79D1\u5BA41 \u533B\u751FA", "\u79D1\u5BA42 \u533B\u751FA", "\u79D1\u5BA42 \u533B\u751FA", "\u79D1\u5BA42 \u533B\u751FA"}));
-		comboBox_1.setBounds(90, 100, 100, 20);
-		f3.add(comboBox_1);
 		
 		JLabel lblNewLabel_5 = new JLabel(" \u65F6\u95F4");
 		lblNewLabel_5.setToolTipText("");
@@ -166,5 +159,54 @@ public class yuyue extends JFrame {
 		JTextPane textPane = new JTextPane();
 		textPane.setBounds(90, 120, 200, 60);
 		f3.add(textPane);
+		
+		JButton btnNewButton = new JButton("\u786E\u5B9A");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				String pa_id,pa_name,pa_age,pa_sex,pa_zhengzhuang,papa;
+				pa_name=textField.getText();
+				pa_id=textField_5.getText();
+				pa_age=textField_1.getText();
+				pa_sex=textField_2.getText();
+				pa_zhengzhuang=textPane.getText();
+				papa="1 0 2 "+pa_id+" "+pa_name+" "+pa_age+" "+pa_sex+" "+De_id+" "+Do_name+" "+pa_zhengzhuang;
+				System.out.println(papa);
+				yuyue2 newframe = new yuyue2();
+				newframe.setVisible(true);
+				dispose();
+				
+				
+			}
+		});
+		btnNewButton.setBounds(90, 213, 93, 30);
+		f3.add(btnNewButton);
+		
+		JButton btnNewButton_2 = new JButton("\u79D1\u5BA4");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				 De_id = (String) JOptionPane.showInputDialog(null,"请选择你要的科室:\n", "科室", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), keshi, "");
+			}
+		});
+		btnNewButton_2.setBounds(90, 79, 93, 23);
+		f3.add(btnNewButton_2);
+		
+		JButton btnNewButton_3 = new JButton("\u533B\u751F");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Do_name = (String) JOptionPane.showInputDialog(null,"请选择你要的医生:\n", "医生", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), yisheng, "");
+			}
+		});
+		btnNewButton_3.setBounds(90, 99, 93, 23);
+		f3.add(btnNewButton_3);
+		
+		JLabel label_2 = new JLabel("\u7535\u8BDD");
+		label_2.setBounds(234, 43, 54, 15);
+		f3.add(label_2);
+		
+		textField_5 = new JTextField();
+		textField_5.setBounds(274, 40, 100, 21);
+		f3.add(textField_5);
+		textField_5.setColumns(10);
+		
 	}
 }

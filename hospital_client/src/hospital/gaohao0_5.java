@@ -44,7 +44,7 @@ public class gaohao0_5 extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8BF7\u8F93\u5165\u59D3\u540D\u4E3A\u60A8\u6302\u53F7");
+		JLabel lblNewLabel = new JLabel("\u8BF7\u8F93\u5165\u7535\u8BDD\u4E3A\u60A8\u6302\u53F7");
 		lblNewLabel.setBounds(138, 20, 135, 38);
 		contentPane.add(lblNewLabel);
 		
@@ -56,6 +56,15 @@ public class gaohao0_5 extends JFrame {
 		JButton btnNewButton = new JButton("\u786E\u5B9A");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+               String pa_id=textField.getText();
+               //if (pa_id==){}  通过电话判断是否已经预约
+               //else {}
+               
+               
+				
+				
 				guahao2 newframe = new guahao2();
 				newframe.setVisible(true);
 			    dispose();
