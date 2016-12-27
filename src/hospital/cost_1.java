@@ -94,21 +94,35 @@ public class cost_1 extends JFrame implements ActionListener  {
 		contentPane.add(Dispending);
 		Dispending.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String sql="delete from Me_List where Pa_id ='"+PaField.getText()+"';";
-				MySQLConnect con=new MySQLConnect(sql);	
+				String a=PaField.getText();
+				String sql;//="delete from Me_List where Pa_id ='"+a+"';";
+				
+				ResultSet ret=null;
 				int key=1;
 				try{
-					if(PaField.getText().equals("")){
+					
+					sql="select Me_id from Me_List where Pa_id='"+a+"';";
+					MySQLConnect con=new MySQLConnect(sql);
+					ret=con.pst.executeQuery();
+					if(!ret.next()){
 						JOptionPane.showMessageDialog(null, "用户不存在"); key=0;}
-					if(key==1){ con.pst.executeUpdate();   JOptionPane.showMessageDialog(null, "收费成功");}
+					sql="delete from Me_List where Pa_id ='"+a+"';";
+					con=new MySQLConnect(sql);
+					if(key==1){ con.pst.executeUpdate();   JOptionPane.showMessageDialog(null, "收费成功");cost_3 newframe = new cost_3();
+					newframe.setVisible(true);
+				    dispose();
+					}
+					double a1=cost_2.num*cost_2.price;
 					con.pst.executeUpdate();
 				}catch(SQLException e1){
 					e1.printStackTrace();
 				}
+			
 			}
 		});
 		this.setBounds(12, 76, 380, 560);
 		this.setVisible(true);
+		
 
 		}
 	

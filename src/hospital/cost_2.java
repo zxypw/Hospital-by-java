@@ -19,7 +19,8 @@ import hospital.MySQLConnect;
 
 public class cost_2 extends AbstractTableModel {
 	
-	
+	static int num;
+	static double price,sum=0;
 		
 
 	Vector RowData,ColumnNames;
@@ -79,8 +80,8 @@ public class cost_2 extends AbstractTableModel {
 	            Vector hang=new Vector();
 	        	hang.add(ret.getString(1));
 	        	hang.add(ret.getString(2));
-	        	hang.add(ret.getInt(3));
-	        	hang.add(ret.getDouble(4));
+	        	hang.add(num=ret.getInt(3));
+	        	hang.add(price=ret.getDouble(4));
 	        	RowData.add(hang);
 	        }
 	        ret.close();		
