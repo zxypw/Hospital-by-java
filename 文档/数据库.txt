@@ -1,0 +1,5 @@
+CREATE TABLE Me_List
+(Pa_id char(20) not null,
+Pa_name char(20) not null,
+Me_id char(20) primary keys,
+Me_price float not null);
