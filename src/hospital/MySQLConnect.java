@@ -15,7 +15,7 @@ public class MySQLConnect {
 	public static final String password = "123456";									
 	
 	public Connection conn = null;				
-	public PreparedStatement pst = null;		
+	public PreparedStatement pst = null;		   
 
 	public MySQLConnect(String sql) {
 		try {
