@@ -7,9 +7,9 @@ import java.io.PrintWriter;
 import java.net.*;
 import java.rmi.UnknownHostException;
 
-import server.Server主机端;
+import server.Server_main;
 
-public class client {
+public class Client客户端 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -17,7 +17,7 @@ public class client {
         try{
         String inputString="test";
         server=new Socket("192.168.1.103",1211);
-        System.out.println("连接服务器(端口1211)成功，当前是"+Server主机端.num+"号客户端，请输入信息:");//num需要存储在数据库里，实时显示当前有几个客户端在与主机连接。
+        System.out.println("连接服务器(端口1211)成功，当前是"+Server_main.num+"号客户端，请输入信息:");//num需要存储在数据库里，实时显示当前有几个客户端在与主机连接。
         BufferedReader sin =new BufferedReader(new InputStreamReader(System.in));
         PrintWriter os=new PrintWriter(server.getOutputStream());
         BufferedReader is=new BufferedReader(new InputStreamReader(server.getInputStream()));

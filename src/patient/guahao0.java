@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,16 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class zhuayao extends JFrame {
+public class guahao0 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -25,7 +22,7 @@ public class zhuayao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					zhuayao frame = new zhuayao();
+					guahao0 frame = new guahao0();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +34,7 @@ public class zhuayao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public zhuayao() {
+	public guahao0() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,30 +42,32 @@ public class zhuayao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8D26\u53F7");
-		lblNewLabel.setBounds(75, 43, 54, 15);
+		JLabel lblNewLabel = new JLabel("\u662F\u5426\u5DF2\u7ECF\u9884\u7EA6");
+		lblNewLabel.setBounds(171, 49, 122, 36);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801");
-		lblNewLabel_1.setBounds(75, 90, 54, 15);
-		contentPane.add(lblNewLabel_1);
-		
-		textField = new JTextField();
-		textField.setBounds(156, 40, 66, 21);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(156, 87, 66, 21);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		JButton btnNewButton = new JButton("\u767B\u5F55");
+		JButton btnNewButton = new JButton("\u662F");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				gaohao0_5 newframe = new gaohao0_5();
+				newframe.setVisible(true);
+			    dispose();
+				
 			}
 		});
-		btnNewButton.setBounds(104, 171, 93, 23);
+		btnNewButton.setBounds(64, 159, 93, 23);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("\u5426");
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				guahao newframe = new guahao();
+				newframe.setVisible(true);
+			    dispose();
+			}
+		});
+		btnNewButton_1.setBounds(272, 159, 93, 23);
+		contentPane.add(btnNewButton_1);
 	}
+
 }

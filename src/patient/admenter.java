@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,7 +12,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class zhuayao extends JFrame {
+public class admenter extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -25,7 +25,7 @@ public class zhuayao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					zhuayao frame = new zhuayao();
+					admenter frame = new admenter();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class zhuayao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public zhuayao() {
+	public admenter() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,30 +45,38 @@ public class zhuayao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8D26\u53F7");
-		lblNewLabel.setBounds(75, 43, 54, 15);
-		contentPane.add(lblNewLabel);
+		JLabel label = new JLabel("\u8D26\u53F7");
+		label.setBounds(101, 72, 54, 15);
+		contentPane.add(label);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801");
-		lblNewLabel_1.setBounds(75, 90, 54, 15);
-		contentPane.add(lblNewLabel_1);
+		JLabel label_1 = new JLabel("\u5BC6\u7801");
+		label_1.setBounds(101, 97, 54, 15);
+		contentPane.add(label_1);
 		
 		textField = new JTextField();
-		textField.setBounds(156, 40, 66, 21);
-		contentPane.add(textField);
 		textField.setColumns(10);
+		textField.setBounds(140, 69, 104, 21);
+		contentPane.add(textField);
 		
 		textField_1 = new JTextField();
-		textField_1.setBounds(156, 87, 66, 21);
-		contentPane.add(textField_1);
 		textField_1.setColumns(10);
+		textField_1.setBounds(140, 94, 104, 21);
+		contentPane.add(textField_1);
 		
-		JButton btnNewButton = new JButton("\u767B\u5F55");
-		btnNewButton.addActionListener(new ActionListener() {
+		JButton button = new JButton("\u767B\u5F55");
+		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				adm newframe = new adm();
+				newframe.setVisible(true);
+				dispose();
 			}
 		});
-		btnNewButton.setBounds(104, 171, 93, 23);
-		contentPane.add(btnNewButton);
+		button.setBounds(94, 152, 93, 23);
+		contentPane.add(button);
+		
+		JButton button_1 = new JButton("\u8FD4\u56DE\u9996\u9875");
+		button_1.setBounds(221, 152, 93, 23);
+		contentPane.add(button_1);
 	}
+
 }

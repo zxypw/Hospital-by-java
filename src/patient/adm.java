@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,13 +6,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class shoufei extends JFrame {
+public class adm extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,7 +21,7 @@ public class shoufei extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					shoufei frame = new shoufei();
+					adm frame = new adm();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,10 +33,7 @@ public class shoufei extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public shoufei() {
-		String result="w-h-b-x-s";  //接受病人信息 
-		String result1="a-4"; //接受药方
-		
+	public adm() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -46,21 +41,25 @@ public class shoufei extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(result);
-		lblNewLabel.setBounds(124, 10, 149, 49);
-		contentPane.add(lblNewLabel);
+		JButton btnNewButton = new JButton("\u67E5\u8BE2\u8D26\u6237");
+		btnNewButton.setBounds(61, 93, 93, 23);
+		contentPane.add(btnNewButton);
 		
-		JLabel lblNewLabel_1 = new JLabel(result1);
-		lblNewLabel_1.setBounds(124, 69, 149, 49);
-		contentPane.add(lblNewLabel_1);
+		JButton btnNewButton_1 = new JButton("\u4FEE\u6539\u8D26\u6237");
+		btnNewButton_1.setBounds(180, 93, 93, 23);
+		contentPane.add(btnNewButton_1);
 		
-		JButton btnNewButton = new JButton("\u6536\u8D39");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "收费成功");  
+		JButton btnNewButton_2 = new JButton("\u8FD4\u56DE\u9996\u9875");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				sys_hospital newframe = new sys_hospital();
+				newframe.setVisible(true);
+				dispose();
+				
 			}
 		});
-		btnNewButton.setBounds(150, 189, 93, 23);
-		contentPane.add(btnNewButton);
+		btnNewButton_2.setBounds(294, 93, 93, 23);
+		contentPane.add(btnNewButton_2);
 	}
+
 }

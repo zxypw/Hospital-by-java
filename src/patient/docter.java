@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -6,13 +6,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JLabel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class zhuayao extends JFrame {
+public class docter extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
@@ -25,7 +25,7 @@ public class zhuayao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					zhuayao frame = new zhuayao();
+					docter frame = new docter();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +37,7 @@ public class zhuayao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public zhuayao() {
+	public docter() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,30 +45,33 @@ public class zhuayao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8D26\u53F7");
-		lblNewLabel.setBounds(75, 43, 54, 15);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801");
-		lblNewLabel_1.setBounds(75, 90, 54, 15);
-		contentPane.add(lblNewLabel_1);
-		
 		textField = new JTextField();
-		textField.setBounds(156, 40, 66, 21);
+		textField.setBounds(213, 53, 66, 21);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
+		JLabel lblNewLabel = new JLabel("\u8D26\u53F7");
+		lblNewLabel.setBounds(149, 56, 54, 15);
+		contentPane.add(lblNewLabel);
+		
 		textField_1 = new JTextField();
-		textField_1.setBounds(156, 87, 66, 21);
+		textField_1.setBounds(213, 93, 66, 21);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);
 		
+		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801");
+		lblNewLabel_1.setBounds(149, 96, 54, 15);
+		contentPane.add(lblNewLabel_1);
+		
 		JButton btnNewButton = new JButton("\u767B\u5F55");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
+				kanbing newframe= new kanbing();
+				newframe.setVisible(true);
+				dispose();
 			}
 		});
-		btnNewButton.setBounds(104, 171, 93, 23);
+		btnNewButton.setBounds(163, 157, 93, 23);
 		contentPane.add(btnNewButton);
 	}
 }

@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,16 +7,13 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
-import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class zhuayao extends JFrame {
+public class yuyue2 extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -25,19 +22,20 @@ public class zhuayao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					zhuayao frame = new zhuayao();
+					yuyue2 frame = new yuyue2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
 		});
+		
 	}
 
 	/**
 	 * Create the frame.
 	 */
-	public zhuayao() {
+	public yuyue2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,30 +43,20 @@ public class zhuayao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8D26\u53F7");
-		lblNewLabel.setBounds(75, 43, 54, 15);
+		JLabel lblNewLabel = new JLabel("\u9884\u7EA6\u6210\u529F\uFF01\u8BF7\u70B9\u51FB\u8FD4\u56DE\u9996\u9875");
+		lblNewLabel.setBounds(128, 67, 165, 39);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801");
-		lblNewLabel_1.setBounds(75, 90, 54, 15);
-		contentPane.add(lblNewLabel_1);
-		
-		textField = new JTextField();
-		textField.setBounds(156, 40, 66, 21);
-		contentPane.add(textField);
-		textField.setColumns(10);
-		
-		textField_1 = new JTextField();
-		textField_1.setBounds(156, 87, 66, 21);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		JButton btnNewButton = new JButton("\u767B\u5F55");
+		JButton btnNewButton = new JButton("\u8FD4\u56DE\u9996\u9875");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				sys_hospital newframe = new sys_hospital();
+				newframe.setVisible(true);
+				dispose();
 			}
 		});
-		btnNewButton.setBounds(104, 171, 93, 23);
+		btnNewButton.setBounds(156, 135, 93, 31);
 		contentPane.add(btnNewButton);
 	}
+
 }

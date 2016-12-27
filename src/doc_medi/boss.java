@@ -1,4 +1,4 @@
-package hos;
+package doc_medi;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;

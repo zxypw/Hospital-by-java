@@ -1,4 +1,4 @@
-客户端生成字符串规则为：role id pwd type data 共5个字段构成，中间用空格隔开
+客户端生成字符串规则为：role(0) id(1) pwd(2) type(3) data 共5个字段构成，中间用空格隔开
    其中：Role为用户类型，初始值为0，对应角色为：
 		1----病人，2----医生，3----药师，4----收费人员，5----管理员，6----院长
 	id为用户id
@@ -9,7 +9,7 @@
 
 对data字段的规定如下
 1、病人
-	data=Pa_state,ID(身份证号),Pa_name,Pa_age,Pa_sex,De_id(选择科室),Dp_id(选择医生)
+	data=Pa_state(0),ID(身份证号)(1),Pa_name(2),Pa_age(3),Pa_sex(4),De_id(5)(选择科室),Dp_id(6)(选择医生)
 2、医生
 	data=Pa_id(病号),Pa_illness,Pa_prescriprion(药单),
 3、药师

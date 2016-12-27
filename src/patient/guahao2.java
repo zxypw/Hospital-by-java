@@ -1,18 +1,17 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
-public class shoufei extends JFrame {
+public class guahao2 extends JFrame {
 
 	private JPanel contentPane;
 
@@ -23,7 +22,7 @@ public class shoufei extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					shoufei frame = new shoufei();
+					guahao2 frame = new guahao2();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -35,10 +34,7 @@ public class shoufei extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public shoufei() {
-		String result="w-h-b-x-s";  //接受病人信息 
-		String result1="a-4"; //接受药方
-		
+	public guahao2() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -46,21 +42,20 @@ public class shoufei extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel(result);
-		lblNewLabel.setBounds(124, 10, 149, 49);
+		JLabel lblNewLabel = new JLabel("\u6302\u53F7\u6210\u529F\uFF01\u8BF7\u70B9\u51FB\u8FD4\u56DE\u9996\u9875");
+		lblNewLabel.setBounds(128, 67, 173, 39);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel(result1);
-		lblNewLabel_1.setBounds(124, 69, 149, 49);
-		contentPane.add(lblNewLabel_1);
-		
-		JButton btnNewButton = new JButton("\u6536\u8D39");
+		JButton btnNewButton = new JButton("\u8FD4\u56DE\u9996\u9875");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "收费成功");  
+			public void actionPerformed(ActionEvent e) {
+				sys_hospital newframe = new sys_hospital();
+				newframe.setVisible(true);
+				dispose();
 			}
 		});
-		btnNewButton.setBounds(150, 189, 93, 23);
+		btnNewButton.setBounds(156, 135, 93, 31);
 		contentPane.add(btnNewButton);
 	}
+
 }

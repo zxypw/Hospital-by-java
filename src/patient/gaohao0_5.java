@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -12,11 +12,10 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class zhuayao extends JFrame {
+public class gaohao0_5 extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -25,7 +24,7 @@ public class zhuayao extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					zhuayao frame = new zhuayao();
+					gaohao0_5 frame = new gaohao0_5();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -37,7 +36,7 @@ public class zhuayao extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public zhuayao() {
+	public gaohao0_5() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -45,30 +44,34 @@ public class zhuayao extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("\u8D26\u53F7");
-		lblNewLabel.setBounds(75, 43, 54, 15);
+		JLabel lblNewLabel = new JLabel("\u8BF7\u8F93\u5165\u7535\u8BDD\u4E3A\u60A8\u6302\u53F7");
+		lblNewLabel.setBounds(138, 20, 135, 38);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("\u5BC6\u7801");
-		lblNewLabel_1.setBounds(75, 90, 54, 15);
-		contentPane.add(lblNewLabel_1);
-		
 		textField = new JTextField();
-		textField.setBounds(156, 40, 66, 21);
+		textField.setBounds(138, 68, 110, 38);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setBounds(156, 87, 66, 21);
-		contentPane.add(textField_1);
-		textField_1.setColumns(10);
-		
-		JButton btnNewButton = new JButton("\u767B\u5F55");
+		JButton btnNewButton = new JButton("\u786E\u5B9A");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
+				
+               String pa_id=textField.getText();
+               //if (pa_id==){}  通过电话判断是否已经预约
+               //else {}
+               
+               
+				
+				
+				guahao2 newframe = new guahao2();
+				newframe.setVisible(true);
+			    dispose();
 			}
 		});
-		btnNewButton.setBounds(104, 171, 93, 23);
+		btnNewButton.setBounds(144, 176, 93, 23);
 		contentPane.add(btnNewButton);
 	}
+
 }

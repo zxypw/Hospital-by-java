@@ -1,4 +1,4 @@
-package doc_medi;
+package patient;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
@@ -7,23 +7,18 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JList;
-import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class kanbing extends JFrame {
     static int i=0;
-    static String choose;
-    static Object[] yao;
-    String result2=null;// 将传输走的字符串 
-    String a;
 	private JPanel contentPane;
 	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
@@ -53,12 +48,14 @@ public class kanbing extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		String result = "w-h-b-x-s";   // 得到病人信息，包括病人号，姓名，性别，年龄，症状    ps:可以直接传送给抓药和收费
-	
-		String result1="a-b-c-d-e-f-g";   //得到药品信息
 		
-		yao=result1.split("-"); //将药的信息分好
-		JLabel lblNewLabel = new JLabel(result);               //此处将abc替换为病人信息
+		
+		
+//		JComboBox comboBox = new JComboBox();
+//		comboBox.setBounds(20, 66, 160, 21);
+//		contentPane.add(comboBox);
+		
+		JLabel lblNewLabel = new JLabel("\u75C5\u4EBA\u75C7\u72B6\uFF1A");
 		lblNewLabel.setBounds(10, 10, 245, 46);
 		contentPane.add(lblNewLabel);
 		
@@ -66,16 +63,24 @@ public class kanbing extends JFrame {
 		label.setBounds(280, 10, 144, 31);
 		contentPane.add(label);
 		
-
+//		while(i==1)
+//		{
+//			JList list = new JList();
+//		list.setBounds(114, 138, 48, -25);
+//		contentPane.add(list);
+//		
+//		JButton btnAdd = new JButton("add");
+//		btnAdd.addActionListener(new ActionListener() {
+//			public void actionPerformed(ActionEvent arg0) {
+//				
+//			}
+//		});
+//		btnAdd.setBounds(265, 65, 93, 23);
+//		contentPane.add(btnAdd);
+//		}
+		
 		
 		JButton button = new JButton("\u786E\u5B9A");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				a=textField.getText();
-				result2= choose+"-"+a;   // 将选择的药和数量拼接在一起
-		System.out.println(result2);
-			}
-		});
 		button.setBounds(162, 228, 93, 23);
 		contentPane.add(button);
 		
@@ -83,21 +88,34 @@ public class kanbing extends JFrame {
 		panel.setBounds(10, 64, 400, 46);
 		contentPane.add(panel);
 		
-		JButton btnNewButton = new JButton("\u9009\u836F");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				
-				 choose = (String) JOptionPane.showInputDialog(null,"请选择需要的药:\n", "药", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), yao, "");  
-			}
-		});
-		
-		panel.add(btnNewButton);
+		JComboBox comboBox = new JComboBox();
+		panel.add(comboBox);
 		
 		textField = new JTextField();
 		panel.add(textField);
 		textField.setColumns(10);
 		
+		JButton btnNewButton = new JButton("New button");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+
+			}
+		});
+		panel.add(btnNewButton);
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(10, 137, 400, 46);
+		contentPane.add(panel_1);
+		
+		JComboBox comboBox_1 = new JComboBox();
+		panel_1.add(comboBox_1);
+		
+		textField_1 = new JTextField();
+		textField_1.setColumns(10);
+		panel_1.add(textField_1);
+		
+		JButton button_1 = new JButton("New button");
+		panel_1.add(button_1);
 	}
 	
 }
