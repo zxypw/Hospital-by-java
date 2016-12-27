@@ -59,45 +59,20 @@ public class yuyue extends JFrame {
 	}
 
 	
-	public String connect(String mes)
-	{
-		   Socket server=null;
-		   String ex=null; 
-	        try{
-	        String inputString;
-	        server=new Socket("127.0.0.1",4444);
-	       //System.out.println("连接成功");
-	        BufferedReader sin =new BufferedReader(new InputStreamReader(System.in));
-	        PrintWriter os=new PrintWriter(server.getOutputStream());
-	        BufferedReader is=new BufferedReader(new InputStreamReader(server.getInputStream(),"UTF-8"));
-	        inputString=mes;
-	       	os.println(inputString);;
-	     	os.flush();
-	        ex=is.readLine();
-	        System.out.println(ex);
-	        os.close();
-	        is.close();
-	        server.close();
-	        }catch(UnknownHostException e){
-			e.printStackTrace();
-		}catch(IOException e){
-			e.printStackTrace();
-		}
-			return ex;
-	}
+	
 	/**
 	 * Create the frame.
 	 */
 	public yuyue() {
-		String  result1=Connect.connect("查询有哪些科室");
+		//String  result1=Connect.connect("查询有哪些科室");
 	//	System.out.println(result1);
 		
 	//	result1="1-2";//"result1为接受到的科室的信息"
-        keshi=result1.split("-"); //将科室的信息分好
+        //keshi=result1.split("-"); //将科室的信息分好
         
-        String result2=Connect.connect("查询有哪些医生");
+        //String result2=Connect.connect("查询有哪些医生");
         //String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1为接受到的医生的信息"
-        yisheng=result2.split("-"); //将药的信息分好
+        //yisheng=result2.split("-"); //将药的信息分好
         
         
 		
