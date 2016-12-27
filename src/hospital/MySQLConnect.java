@@ -14,8 +14,8 @@ public class MySQLConnect {
 	public static final String user = "tempuserfordage";									
 	public static final String password = "123456";									
 	
-	public Connection conn = null;				
-	public PreparedStatement pst = null;		   
+	public Connection conn = null;				  
+	public PreparedStatement pst = null;		      
 
 	public MySQLConnect(String sql) {
 		try {
