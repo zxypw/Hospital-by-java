@@ -78,3 +78,6 @@ public class cost_3 extends JFrame {
 		contentPane.add(label_2);
 	}
 }
+
+
+//

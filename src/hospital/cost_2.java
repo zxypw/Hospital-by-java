@@ -80,7 +80,7 @@ public class cost_2 extends AbstractTableModel {
 	            Vector hang=new Vector();
 	        	hang.add(ret.getString(1));
 	        	hang.add(ret.getString(2));
-	        	hang.add(num=ret.getInt(3));
+	        	hang.add(num=ret.getInt(3));//
 	        	hang.add(price=ret.getDouble(4));
 	        	RowData.add(hang);
 	        }

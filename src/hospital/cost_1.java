@@ -114,11 +114,11 @@ public class cost_1 extends JFrame implements ActionListener  {
 					}
 					double a1=cost_2.num*cost_2.price;
 					con.pst.executeUpdate();
-				}catch(SQLException e1){
-					e1.printStackTrace();
-				}
+				}catch(SQLException e1){  
+					e1.printStackTrace(); 
+				}     
 			
-			}
+			}                            
 		});
 		this.setBounds(12, 76, 380, 560);
 		this.setVisible(true);
@@ -132,5 +132,12 @@ public class cost_1 extends JFrame implements ActionListener  {
 		
 	}
 }
+
+
+
+
+
+
+
 
 
