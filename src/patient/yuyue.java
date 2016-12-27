@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import mySQL.MySQLConnect;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -26,6 +29,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.rmi.UnknownHostException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
 
@@ -64,17 +69,58 @@ public class yuyue extends JFrame {
 	 * Create the frame.
 	 */
 	public yuyue() {
-		//String  result1=Connect.connect("查询有哪些科室");
-	//	System.out.println(result1);
 		
-	//	result1="1-2";//"result1为接受到的科室的信息"
-        //keshi=result1.split("-"); //将科室的信息分好
+		 MySQLConnect db = null;  
+	     ResultSet ret = null;  
+	     String sql = "select * from Department;";
+	     //System.out.println(sql);
+		 db = new MySQLConnect(sql);
+		 String result1="";
+			try {int i=0;
+				ret=db.pst.executeQuery();					// 执行sql语句，得到结果集
+			    while(ret.next()){
+			    	if (i!=0)result1=result1.concat("-");
+			    	String bb=(ret.getString("De_name"));
+			    	result1=result1+(bb);
+			    	//System.out.println(result1);
+			    	i++;
+			    }
+			    ret.close();
+	            db.close();			// 关闭数据库连接
+		        } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
+			
+
+	    keshi=result1.split("-"); //将科室的信息分好
+	    String result2="";
+	    sql = "select * from Doctor;";
+	    db = new MySQLConnect(sql);
+		try {   int i=0;
+				ret=db.pst.executeQuery();					// 执行sql语句，得到结果集
+			    while(ret.next()){
+			    	if (i!=0)result2=result2+"-";
+			    	String bb=(ret.getString("Do_name"));
+			    	result2=result2+(bb);
+			    //	System.out.println(result2);
+			    	i++;
+			    }
+			    ret.close();
+	            db.close();			// 关闭数据库连接
+		        } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
+	    
+	    
+        yisheng=result2.split("-"); //将医生 的信息分好
         
-        //String result2=Connect.connect("查询有哪些医生");
-        //String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1为接受到的医生的信息"
-        //yisheng=result2.split("-"); //将药的信息分好
         
-        
+
+       
+		
+		
 		
 		setTitle("\u586B\u5199\u4E2A\u4EBA\u4FE1\u606F");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -173,7 +219,7 @@ public class yuyue extends JFrame {
 		
 		JButton btnNewButton = new JButton("\u786E\u5B9A");
 		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		public void actionPerformed(ActionEvent arg0) {
 				String pa_id,pa_name,pa_age,pa_sex,pa_zhengzhuang,papa;
 				pa_name=textField.getText();
 				pa_id=textField_5.getText();
@@ -182,8 +228,23 @@ public class yuyue extends JFrame {
 				pa_zhengzhuang=textPane.getText();
 				
 				papa="1 "+pa_id+" 0 2 "+"1 "+pa_id+" "+pa_name+" "+pa_age+" "+pa_sex+" "+De_id+" "+Do_name+" "+pa_zhengzhuang;
-				System.out.println(papa);
-				String up=Connect.connect(papa);
+				
+				 MySQLConnect db = null;  
+			     ResultSet ret = null;  
+			     String sql = "Insert into Patient(Pa_id,Pa_name,Pa_age,Pa_sex,De_id,Do_id,Pa_state,Pa_illness) values('"+pa_id+"','"+pa_name+"','"+pa_sex+"','"+pa_age+"','"+De_id+"','"+Do_name+"',1,'"+pa_zhengzhuang+"');";
+			     System.out.println(sql);
+				 db = new MySQLConnect(sql);
+					try {
+						db.pst.executeUpdate();					// 执行sql语句，得到结果集
+					    
+			            db.close();			// 关闭数据库连接
+				        } catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    }
+				
+				
+				
 				yuyue2 newframe = new yuyue2();
 				newframe.setVisible(true);
 				dispose();

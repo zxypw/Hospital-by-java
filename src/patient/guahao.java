@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import mySQL.MySQLConnect;
+
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -20,6 +23,8 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
 
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextPane;
 
@@ -65,9 +70,54 @@ public class guahao extends JFrame {
 		setContentPane(f3);
 		f3.setLayout(null);
 		
-		String result1="1-2";//"result1Ϊ���ܵ���ҩ����Ϣ"
+		
+		
+		 MySQLConnect db = null;  
+	     ResultSet ret = null;  
+	     String sql = "select * from Department;";
+	     //System.out.println(sql);
+		 db = new MySQLConnect(sql);
+		 String result1="";
+			try {int i=0;
+				ret=db.pst.executeQuery();					// 执行sql语句，得到结果集
+			    while(ret.next()){
+			    	if (i!=0)result1=result1.concat("-");
+			    	String bb=(ret.getString("De_name"));
+			    	result1=result1+(bb);
+			    	//System.out.println(result1);
+			    	i++;
+			    }
+			    ret.close();
+	            db.close();			// 关闭数据库连接
+		        } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
+			
+			
+			
+			
+		//String result1="1-2";//"result1Ϊ���ܵ���ҩ����Ϣ"
         keshi=result1.split("-"); //��ҩ����Ϣ�ֺ�
-        String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1Ϊ���ܵ���ҩ����Ϣ"
+        //String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1Ϊ���ܵ���ҩ����Ϣ"
+        String result2="";
+	    sql = "select * from Doctor;";
+	    db = new MySQLConnect(sql);
+		try {   int i=0;
+				ret=db.pst.executeQuery();					// 执行sql语句，得到结果集
+			    while(ret.next()){
+			    	if (i!=0)result2=result2+"-";
+			    	String bb=(ret.getString("Do_name"));
+			    	result2=result2+(bb);
+			    //	System.out.println(result2);
+			    	i++;
+			    }
+			    ret.close();
+	            db.close();			// 关闭数据库连接
+		        } catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		    }
         yisheng=result2.split("-"); //��ҩ����Ϣ�ֺ�
 		
         JLabel label = new JLabel(" \u59D3\u540D");
@@ -143,7 +193,7 @@ public class guahao extends JFrame {
 		JButton button = new JButton("\u9009\u62E9\u79D1\u5BA4");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			 De_id = (String) JOptionPane.showInputDialog(null,"��ѡ����Ҫ�Ŀ���:\n", "����", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), keshi, ""); 
+			 De_id = (String) JOptionPane.showInputDialog(null,"请选择科室:\n", "选择科室", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), keshi, ""); 
 			}
 		});
 		button.setBounds(90, 79, 93, 23);
@@ -152,7 +202,7 @@ public class guahao extends JFrame {
 		JButton button_1 = new JButton("\u9009\u62E9\u533B\u751F");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Do_name = (String) JOptionPane.showInputDialog(null,"��ѡ����Ҫ��ҽ��:\n", "ҽ��", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), yisheng, ""); 
+				Do_name = (String) JOptionPane.showInputDialog(null,"请选择医生:\n", "选择医生", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), yisheng, ""); 
 			}
 		});
 		button_1.setBounds(90, 99, 93, 23);
@@ -170,6 +220,21 @@ public class guahao extends JFrame {
 				pa_zhengzhuang=textPane.getText();
 				papa="1 0 2 "+pa_id+" "+pa_name+" "+pa_age+" "+pa_sex+" "+De_id+" "+Do_name+" "+pa_zhengzhuang;
 				System.out.println(papa);
+				
+				
+				MySQLConnect db = null;  
+			     ResultSet ret = null;  
+			     String sql = "Insert into Patient(Pa_id,Pa_name,Pa_age,Pa_sex,De_id,Do_id,Pa_state,Pa_illness) values('"+pa_id+"','"+pa_name+"','"+pa_sex+"','"+pa_age+"','"+De_id+"','"+Do_name+"',2,'"+pa_zhengzhuang+"');";
+			     System.out.println(sql);
+				 db = new MySQLConnect(sql);
+					try {
+						db.pst.executeUpdate();					// 执行sql语句，得到结果集
+					    
+			            db.close();			// 关闭数据库连接
+				        } catch (SQLException e) { 
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				    }
 				guahao2 newframe = new guahao2();
 				newframe.setVisible(true);
 				dispose();
@@ -180,7 +245,7 @@ public class guahao extends JFrame {
 		btnNewButton.setBounds(90, 213, 93, 30);
 		f3.add(btnNewButton);
 		
-		
+		 
 		
 				
 	}

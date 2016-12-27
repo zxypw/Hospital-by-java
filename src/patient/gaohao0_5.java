@@ -6,10 +6,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import mySQL.MySQLConnect;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 public class gaohao0_5 extends JFrame {
@@ -59,15 +64,21 @@ public class gaohao0_5 extends JFrame {
 				
 				
                String pa_id=textField.getText();
-               String b="1 "+pa_id+" 0"+" 3 2";//把当前ID的病人的状态由预约改为挂号(2); 
-               String a=Connect.connect(b);
-               
-               
-            
-               
-				
-				
-				guahao2 newframe = new guahao2();
+
+			   MySQLConnect db = null;  
+			     ResultSet ret = null;  
+			     String sql = "update Patient set Pa_state=2 where Pa_id="+pa_id+";";
+			     System.out.println(sql);
+				 db = new MySQLConnect(sql);
+					try {
+						db.pst.executeUpdate();					// 执行sql语句，得到结果集
+					    
+			            db.close();			// 关闭数据库连接
+				        } catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				    }
+                guahao2 newframe = new guahao2();
 				newframe.setVisible(true);
 			    dispose();
 			}
