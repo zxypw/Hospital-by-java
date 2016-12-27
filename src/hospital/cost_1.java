@@ -68,6 +68,7 @@ public class cost_1 extends JFrame implements ActionListener  {
 		
 		
 
+		       
 		
 		
 		setTitle("\u836F\u623F\u6536\u8D39");
@@ -95,7 +96,7 @@ public class cost_1 extends JFrame implements ActionListener  {
 			public void actionPerformed(ActionEvent e) {
 				String sql="delete from Me_List where Pa_id ='"+PaField.getText()+"';";
 				MySQLConnect con=new MySQLConnect(sql);	
-				int key=1;//定义一个中间变量，来判断输入信息的窗口，如果成功 则 保存成功
+				int key=1;
 				try{
 					if(PaField.getText().equals("")){
 						JOptionPane.showMessageDialog(null, "用户不存在"); key=0;}
@@ -112,7 +113,7 @@ public class cost_1 extends JFrame implements ActionListener  {
 		}
 	
 	public void actionPerformed(ActionEvent arg0) {
-		// TODO 自动生成的方法存根
+		
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		
 	}
