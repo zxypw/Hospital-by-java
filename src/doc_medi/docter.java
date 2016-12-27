@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import patient.Connect;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
@@ -13,7 +16,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class docter extends JFrame {
-
+	static String zhanghao,mima,dodo;
+	
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_1;
@@ -66,7 +70,19 @@ public class docter extends JFrame {
 		JButton btnNewButton = new JButton("\u767B\u5F55");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				kanbing newframe= new kanbing();
+				
+		        zhanghao=textField.getText();
+		        mima=textField_1.getText();
+		        dodo="2 "+zhanghao+" "+mima+" 1";
+		        //System.out.println(dodo);
+		        String b=Connect.connect(dodo);//得到查询结果,如果为空则查询失败
+				//System.out.println(b);
+		        if (b.equals("")){
+					//没有查询到医生信息，返回界面。
+					System.out.println("密码错误");
+					
+				}
+		        kanbing newframe= new kanbing();
 				newframe.setVisible(true);
 				dispose();
 			}

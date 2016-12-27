@@ -65,10 +65,10 @@ public class guahao extends JFrame {
 		setContentPane(f3);
 		f3.setLayout(null);
 		
-		String result1="1-2";//"result1Îª½ÓÊÜµ½µÄÒ©µÄÐÅÏ¢"
-        keshi=result1.split("-"); //½«Ò©µÄÐÅÏ¢·ÖºÃ
-        String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1Îª½ÓÊÜµ½µÄÒ©µÄÐÅÏ¢"
-        yisheng=result2.split("-"); //½«Ò©µÄÐÅÏ¢·ÖºÃ
+		String result1="1-2";//"result1Îªï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½Ò©ï¿½ï¿½ï¿½ï¿½Ï¢"
+        keshi=result1.split("-"); //ï¿½ï¿½Ò©ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Öºï¿½
+        String result2="1.a-1.b-1.c-2.a-2.b-2.c";//"result1Îªï¿½ï¿½ï¿½Üµï¿½ï¿½ï¿½Ò©ï¿½ï¿½ï¿½ï¿½Ï¢"
+        yisheng=result2.split("-"); //ï¿½ï¿½Ò©ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½Öºï¿½
 		
         JLabel label = new JLabel(" \u59D3\u540D");
 		label.setBounds(55, 20, 40, 20);
@@ -125,7 +125,7 @@ public class guahao extends JFrame {
 		btnNewButton_1.setBounds(249, 213, 93, 30);
 		f3.add(btnNewButton_1);
 		
-		JTextPane textPane = new JTextPane();
+		final JTextPane textPane = new JTextPane();
 		textPane.setBounds(90, 120, 200, 60);
 		f3.add(textPane);
 		
@@ -143,7 +143,7 @@ public class guahao extends JFrame {
 		JButton button = new JButton("\u9009\u62E9\u79D1\u5BA4");
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			 De_id = (String) JOptionPane.showInputDialog(null,"ÇëÑ¡ÔñÄãÒªµÄ¿ÆÊÒ:\n", "¿ÆÊÒ", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), keshi, ""); 
+			 De_id = (String) JOptionPane.showInputDialog(null,"ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Òªï¿½Ä¿ï¿½ï¿½ï¿½:\n", "ï¿½ï¿½ï¿½ï¿½", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), keshi, ""); 
 			}
 		});
 		button.setBounds(90, 79, 93, 23);
@@ -152,7 +152,7 @@ public class guahao extends JFrame {
 		JButton button_1 = new JButton("\u9009\u62E9\u533B\u751F");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Do_name = (String) JOptionPane.showInputDialog(null,"ÇëÑ¡ÔñÄãÒªµÄÒ½Éú:\n", "Ò½Éú", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), yisheng, ""); 
+				Do_name = (String) JOptionPane.showInputDialog(null,"ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½Ò½ï¿½ï¿½:\n", "Ò½ï¿½ï¿½", JOptionPane.PLAIN_MESSAGE, new ImageIcon("icon.png"), yisheng, ""); 
 			}
 		});
 		button_1.setBounds(90, 99, 93, 23);

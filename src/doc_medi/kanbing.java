@@ -6,6 +6,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import patient.Connect;
+
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JComboBox;
@@ -54,8 +57,10 @@ public class kanbing extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		String result = "w-h-b-x-s";   // 得到病人信息，包括病人号，姓名，性别，年龄，症状    ps:可以直接传送给抓药和收费
-	
+		String b="2 "+docter.zhanghao+" "+docter.mima+" 1";
+		String result=Connect.connect(b);
+		//String result = "w-h-b-x-s";   // 得到病人信息，包括病人号，姓名，性别，年龄，症状    ps:可以直接传送给抓药和收费
+	    //String result1=Connect.connect("2-");
 		String result1="a-b-c-d-e-f-g";   //得到药品信息
 		
 		yao=result1.split("-"); //将药的信息分好

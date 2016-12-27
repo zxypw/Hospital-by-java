@@ -59,9 +59,11 @@ public class gaohao0_5 extends JFrame {
 				
 				
                String pa_id=textField.getText();
-               //if (pa_id==){}  通过电话判断是否已经预约
-               //else {}
+               String b="1 "+pa_id+" 0"+" 3 2";//鎶婂綋鍓岻D鐨勭梾浜虹殑鐘舵�佺敱棰勭害鏀逛负鎸傚彿(2); 
+               String a=Connect.connect(b);
                
+               
+            
                
 				
 				
