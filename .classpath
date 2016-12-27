@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="F:/用户目录/我的文档/GitHub/Hospital-by-java/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="E:/工具/java/workspace/hospital_client/src/mysql-connector-java-5.1.40-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
