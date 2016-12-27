@@ -116,7 +116,7 @@ public class CostLogin extends JFrame {
 		{
 			lblNewLabel_1.setText("µÇÂ¼³É¹¦");
 			cost_1 cost=new cost_1();
-			cost.main(null);
+			//cost.main(null);
 			dispose();
 		}
 		else 

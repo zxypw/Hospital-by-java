@@ -6,6 +6,11 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import doc_medi.Docter_login;
+import hospital.CostLogin;
+import phar.PharLogin;
+
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -62,37 +67,35 @@ public class sys_hospital extends JFrame {
 		JButton btnNewButton_1 = new JButton("\u533B\u751F\u5C31\u8BCA");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnNewButton_1.setBounds(90, 63, 96, 139);
-		f1.add(btnNewButton_1);
-		
-		JButton btnNewButton_2 = new JButton("\u836F\u623F\u6536\u8D39");
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				costenter newframe = new costenter();
+				Docter_login newframe = new Docter_login();
 				newframe.setVisible(true);
 			    dispose();
 			}
 		});
-		btnNewButton_2.setBounds(170, 63, 90, 139);
+		btnNewButton_1.setBounds(117, 63, 96, 139);
+		f1.add(btnNewButton_1);
+		
+		JButton btnNewButton_2 = new JButton("抓药收费");
+		btnNewButton_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				CostLogin newframe = new CostLogin();
+				newframe.setVisible(true);
+			    dispose();
+			}
+		});
+		btnNewButton_2.setBounds(223, 63, 90, 139);
 		f1.add(btnNewButton_2);
 		
 		
-		JButton btnNewButton_3 = new JButton("\u9662\u957F\u67E5\u8BE2");
-		btnNewButton_3.setBounds(249, 63, 90, 139);
-		f1.add(btnNewButton_3);
-		
-		JButton btnNewButton_4 = new JButton("\u7BA1\u7406\u5458");
-		btnNewButton_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				admenter newframe = new admenter();
+		JButton btnNewButton_3 = new JButton("药房管理");
+		btnNewButton_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				PharLogin newframe = new PharLogin();
 				newframe.setVisible(true);
 			    dispose();
-				
 			}
 		});
-		btnNewButton_4.setBounds(328, 63, 81, 139);
-		f1.add(btnNewButton_4);
+		btnNewButton_3.setBounds(323, 63, 90, 139);
+		f1.add(btnNewButton_3);
 	}
 }
