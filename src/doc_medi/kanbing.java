@@ -22,6 +22,7 @@ public class kanbing extends JFrame {
     static Object[] yao;
     String result2=null;// 将传输走的字符串 
     String a;
+    String result3="5";//排队人数
 	private JPanel contentPane;
 	private JTextField textField;
 
@@ -62,7 +63,7 @@ public class kanbing extends JFrame {
 		lblNewLabel.setBounds(10, 10, 245, 46);
 		contentPane.add(lblNewLabel);
 		
-		JLabel label = new JLabel("\u5269\u4F59\u6392\u961F\u75C5\u4EBA\u4EBA\u6570\uFF1A      ");
+		JLabel label = new JLabel("排队人数为： "+result3);
 		label.setBounds(280, 10, 144, 31);
 		contentPane.add(label);
 		

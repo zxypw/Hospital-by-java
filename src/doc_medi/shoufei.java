@@ -15,7 +15,7 @@ import java.awt.event.ActionEvent;
 public class shoufei extends JFrame {
 
 	private JPanel contentPane;
-
+	String result2="5";  //根据药名搜索出价格
 	/**
 	 * Launch the application.
 	 */
@@ -36,8 +36,8 @@ public class shoufei extends JFrame {
 	 * Create the frame.
 	 */
 	public shoufei() {
-		String result="w-h-b-x-s";  //接受病人信息 
-		String result1="a-4"; //接受药方
+		String result="w-h-b-x-s";  //接受病人信息     "4 0 1 "+"Pa_name"+" "+"Pa_illness"
+		String result1="a-4"; //接受药方                           "4 0 1 "+"Pa_prescriprion"
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -57,7 +57,7 @@ public class shoufei extends JFrame {
 		JButton btnNewButton = new JButton("\u6536\u8D39");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showMessageDialog(null, "收费成功");  
+				JOptionPane.showMessageDialog(null, "收费成功总共"+result2+"元");    
 			}
 		});
 		btnNewButton.setBounds(150, 189, 93, 23);

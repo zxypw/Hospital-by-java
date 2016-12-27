@@ -66,7 +66,7 @@ public class zhuayao2 extends JFrame {
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				a=textField.getText();
-				result2= choose+"-"+a;   // 将选择的药和数量拼接在一起
+				result2= choose+"-"+a;   // 将选择的药和数量拼接在一起                      
 		System.out.println(result2);
 			}
 		});
