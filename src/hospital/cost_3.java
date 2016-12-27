@@ -60,7 +60,7 @@ public class cost_3 extends JFrame {
 		textField.setBounds(187, 121, 139, 21);
 		contentPane.add(textField);
 		textField.setColumns(10);
-		double sum=cost_2.num*cost_2.price;
+		double sum=cost_2.num*cost_2.price;  
 		String sum_str="\""+sum+"\"";
 		textField.setText(sum_str);
 		
